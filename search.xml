@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>腾讯面试</title>
+      <link href="/2022/02/16/tx1/"/>
+      <url>/2022/02/16/tx1/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>首先是自我介绍</p><p>问我对测开有没有兴趣</p><p>继续向我介绍测试方面的工作,隐晦向我表示双飞想进腾讯很难,转岗不可能</p><p>问我对计算机方面的知识  问大学开了什么课</p><p>对 操作系统 网络 语言 算法了解了一下</p><p>没有看项目经验 </p><p>着重问了比赛 比赛具体做什么 怎么做的 怎么优化 和别人的不一样 对于算法、代码的优化 这里说了很久 快半小时</p><p>基础知识:<br>堆和栈的区别</p><p>堆栈溢出的原因 最直接以及最常见的原因</p><p>为什么需要字节对齐</p><p>枚举和宏 </p><p>线程进程的区别</p><p>Linux常见命令</p><p>怎么查看cpu占用率</p><p>三次握手四次挥手流程</p><p>开放题: 给一个ATM机,你会从哪些维度测试,怎么测试</p><p>算法:最长子串</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+          <category> 腾讯 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 菜鸡学习❀ </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu20.04美化</title>
+      <link href="/2022/02/13/Ubuntu%E7%BE%8E%E5%8C%96/"/>
+      <url>/2022/02/13/Ubuntu%E7%BE%8E%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><p>[TOC]</p><p>主题<a href="https://www.pling.com/s/Gnome">https://www.pling.com/s/Gnome</a><br>扩展<a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="登陆-Ubuntu-账号，开启-Livepatch-功能"><a href="#登陆-Ubuntu-账号，开启-Livepatch-功能" class="headerlink" title="登陆 Ubuntu 账号，开启 Livepatch 功能"></a>登陆 Ubuntu 账号，开启 Livepatch 功能</h2><p><img src= "https://npm.elemecdn.com/lz-assets@0.0.3/image/loading.gif" data-lazy-src="https://cdn.lizheblogs.xyz//post/image-20220214041014784.png" alt="image-20220214041014784"></p><p>点击 Ubuntu Single-On 就会弹出登陆页面了，这里也可以先不登陆，直接点击跳过，后面再登陆。</p><p>也可以通过在已安装软件列表里面搜索 Software &amp; Updates 软件，如下图，打开后登陆 Ubuntu 账号。</p><p>这里有问题,先不看</p><h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h3 id="安装必要软件"><a href="#安装必要软件" class="headerlink" title="安装必要软件"></a>安装必要软件</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install gnome-tweaks chrome-gnome-shell</span><br><span class="line">sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf </span><br><span class="line">sudo apt install sassc optipng inkscape libcanberra-gtk-module libglib2.0-dev libxml2-utils</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ROS1 Noetic</title>
       <link href="/2022/02/05/ros-1/"/>
       <url>/2022/02/05/ros-1/</url>
@@ -66,7 +122,7 @@
       <link href="/2022/01/10/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
       <url>/2022/01/10/%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
       
-        <content type="html"><![CDATA[<h3 id="About-Vim"><a href="#About-Vim" class="headerlink" title="About Vim"></a>About Vim</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-</span><br><span class="line">批量替换:</span><br><span class="line">:%s/abc/123/g </span><br><span class="line">-</span><br><span class="line">选中 单词开头或者结尾 (在v模式下) 按e进行选择</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br></pre></td></tr></table></figure><p><strong>重新连接Ubuntu联网指令：</strong></p><p><code>sudo /etc/init.d/network-manager restart</code></p><p><strong>重新挂载共享文件夹</strong></p><p><code>sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000</code></p><p><strong>搜wifi:</strong></p><p><code>sudo iw dev wlan0 scan | grep SSID</code> </p><p><strong>交叉编译树莓派gcc：</strong></p><p><code>arm-linux-gnueabihf-gcc</code></p><p><strong>树莓派安全关机：</strong></p><p><code>sudo shutdown -h now</code></p><p><strong>树莓派重启：</strong></p><p><code>sudo reboot</code><br><strong>树莓派传输文件使用fillzeila：前面加上sftp://</strong></p><p><strong>树莓派拍照：</strong> <code>raspistill -o image.jpg</code><br>监控   :8080</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装软件：sudo  dpkg  -itar xvf xxx</span><br><span class="line">Linux查看pdf：zathura`</span><br><span class="line">LINUX解压文件：tar xvf xxx</span><br></pre></td></tr></table></figure><h3 id="摄像头推流："><a href="#摄像头推流：" class="headerlink" title="摄像头推流："></a>摄像头推流：</h3><p><code>/usr/local/bin/mjpg_streamer -i &quot;/usr/local/lib/mjpg-streamer/input_uvc.so -n -f 30 -r 1280x720&quot; -o &quot;/usr/local/lib/mjpg-streamer/output_http.so -p 8080 -w /usr/local/share/mjpg-streamer/www&quot;</code></p><p><strong>人脸识别（虹软）临时路径：</strong></p><p><code>export LD_LIBRARY_PATH=/home/lz/face/samplecode/ASFTestDemo/linux_so/:$LD_LIBRARY_PATH</code> </p><p><strong>opencv:</strong><br>    编译时 加 <code>pkg-config --cflags --libs opencv</code></p><h3 id="百度文库下载"><a href="#百度文库下载" class="headerlink" title="百度文库下载:"></a>百度文库下载:</h3><p>网址baidu后面加三个v </p><p>继续补充…</p><p><strong>Typora+七牛云配置:</strong></p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;picBed&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;uploader&quot;</span>: <span class="string">&quot;qiniu&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;qiniu&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;accessKey&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;secretKey&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;bucket&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 存储空间名</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 自定义域名</span></span><br><span class="line">        <span class="attr">&quot;area&quot;</span>:  <span class="string">&quot;&quot;</span>, <span class="comment">// 存储区域编号</span></span><br><span class="line">        <span class="attr">&quot;options&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 网址后缀，比如？imgslim</span></span><br><span class="line">        <span class="attr">&quot;path&quot;</span>: <span class="string">&quot;img/&quot;</span> <span class="comment">// 自定义存储路径，比如 img/</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;picgoPlugins&quot;</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="About-Vim"><a href="#About-Vim" class="headerlink" title="About Vim"></a>About Vim</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-</span><br><span class="line">批量替换:</span><br><span class="line">:%s/abc/123/g </span><br><span class="line">-</span><br><span class="line">选中 单词开头或者结尾 (在v模式下) 按e进行选择</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br><span class="line">-</span><br></pre></td></tr></table></figure><p><strong>替换github.com 为 hub.fastgit.org</strong></p><p><strong>重新连接Ubuntu联网指令：</strong></p><p><code>sudo /etc/init.d/network-manager restart</code></p><p><strong>重新挂载共享文件夹</strong></p><p><code>sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000</code></p><p><strong>搜wifi:</strong></p><p><code>sudo iw dev wlan0 scan | grep SSID</code> </p><p><strong>交叉编译树莓派gcc：</strong></p><p><code>arm-linux-gnueabihf-gcc</code></p><p><strong>树莓派安全关机：</strong></p><p><code>sudo shutdown -h now</code></p><p><strong>树莓派重启：</strong></p><p><code>sudo reboot</code><br><strong>树莓派传输文件使用fillzeila：前面加上sftp://</strong></p><p><strong>树莓派拍照：</strong> <code>raspistill -o image.jpg</code><br>监控   :8080</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装软件：sudo  dpkg  -itar xvf xxx</span><br><span class="line">Linux查看pdf：zathura`</span><br><span class="line">LINUX解压文件：tar xvf xxx</span><br></pre></td></tr></table></figure><h3 id="摄像头推流："><a href="#摄像头推流：" class="headerlink" title="摄像头推流："></a>摄像头推流：</h3><p><code>/usr/local/bin/mjpg_streamer -i &quot;/usr/local/lib/mjpg-streamer/input_uvc.so -n -f 30 -r 1280x720&quot; -o &quot;/usr/local/lib/mjpg-streamer/output_http.so -p 8080 -w /usr/local/share/mjpg-streamer/www&quot;</code></p><p><strong>人脸识别（虹软）临时路径：</strong></p><p><code>export LD_LIBRARY_PATH=/home/lz/face/samplecode/ASFTestDemo/linux_so/:$LD_LIBRARY_PATH</code> </p><p><strong>opencv:</strong><br>    编译时 加 <code>pkg-config --cflags --libs opencv</code></p><h3 id="百度文库下载"><a href="#百度文库下载" class="headerlink" title="百度文库下载:"></a>百度文库下载:</h3><p>网址baidu后面加三个v </p><p>继续补充…</p><p><strong>Typora+七牛云配置:</strong></p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;picBed&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;uploader&quot;</span>: <span class="string">&quot;qiniu&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;qiniu&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;accessKey&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;secretKey&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;bucket&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 存储空间名</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 自定义域名</span></span><br><span class="line">        <span class="attr">&quot;area&quot;</span>:  <span class="string">&quot;&quot;</span>, <span class="comment">// 存储区域编号</span></span><br><span class="line">        <span class="attr">&quot;options&quot;</span>: <span class="string">&quot;&quot;</span>, <span class="comment">// 网址后缀，比如？imgslim</span></span><br><span class="line">        <span class="attr">&quot;path&quot;</span>: <span class="string">&quot;img/&quot;</span> <span class="comment">// 自定义存储路径，比如 img/</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;picgoPlugins&quot;</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
