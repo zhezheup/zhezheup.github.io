@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 技术贴 </category>
+          <category> 技术帖 </category>
           
           <category> 网络编程 </category>
           
@@ -22,13 +22,13 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 408 </tag>
             
             <tag> 操作系统 </tag>
             
             <tag> 计算机网络基础 </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -142,9 +142,9 @@
       
         <tags>
             
-            <tag> 菜鸡学习❀ </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> 菜鸡学习❀ </tag>
             
         </tags>
       
