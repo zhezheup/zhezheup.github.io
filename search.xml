@@ -33,6 +33,35 @@
     
     
     <entry>
+      <title>QT小记</title>
+      <link href="/2022/04/06/Qt/"/>
+      <url>/2022/04/06/Qt/</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><p>#</p><h1 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h1><p>信号与槽关联是用 QObject::connect() 函数实现的，其基本格式是： </p><p>QObject::connect(sender, SIGNAL(signal()), receiver, SLOT(slot())); </p><p>参数 1、信号的发送者 </p><p>参数 2、发送的信号 </p><p>参数 3、信号的接收者 </p><p>参数 4、处理函数（槽函数） </p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">QMetaObject::Connection ret = <span class="built_in">connect</span>(btn,&amp;QPushButton::clicked,<span class="keyword">this</span>,&amp;QWidget::close);</span><br><span class="line">    <span class="comment">//sendr.btn signal.clicked点击 recvier.this widget.close事件 把click信号和槽关联起来</span></span><br></pre></td></tr></table></figure><p>信号与槽（Signal &amp; Slot）是 Qt 编程的基础，也是 Qt 的一大创新。因为有了信号与槽的 </p><p>编程机制，在 Qt 中处理界面各个组件的交互操作时变得更加直观和简单。它可以让应用 </p><p>程序编程人员把这些互不了解的对象绑定在一起。</p><p><strong>信号（Signal）</strong> </p><p>信号（Signal）就是在特定情况下被发射的事件，例如 PushButton 最常见的信号就是鼠标 </p><p>单击时发射的 clicked() 信号，一个 ComboBox 最常见的信号是选择的列表项变化时发射 </p><p>的 CurrentIndexChanged() 信号。 </p><p>GUI 程序设计的主要内容就是对界面上各组件的信号的响应，只需要知道什么情况下发射 </p><p>哪些信号，合理地去响应和处理这些信号就可以了。 </p><p><strong>槽（Slot）</strong> </p><p>就是对信号响应的函数。槽就是一个函数，与一般的 C++函数是一样的，可以定义在类的任何部分（public、private 或 protected），可以具有任何参数，也可以被直接调用。槽函数与一般的函数不同的是：槽函数可以与一个信号关联，当信号被发射时，关联的槽函数被自动执行。</p><h2 id="Qt-中自定义信号和槽函数"><a href="#Qt-中自定义信号和槽函数" class="headerlink" title="Qt 中自定义信号和槽函数"></a>Qt 中自定义信号和槽函数</h2><p>自定义信号和槽的区别，<strong>信号和槽都为 void 类型</strong>，信号只需要定义，<strong>不需要实</strong> </p><p><strong>现</strong>，而槽函数<strong>既需要定义，也需要实现</strong>，<strong>信号和槽都可以有参数也都可以重载</strong>。emit </p><p>是出发信号的标志，可要可不要。</p><p>注意<strong>信号重载函数指针</strong>指向哪一个函数的问题，对于重载函数的信号连接，要指 </p><p>明到底连接的是哪一个</p><h2 id="信号和槽的扩展"><a href="#信号和槽的扩展" class="headerlink" title="信号和槽的扩展"></a>信号和槽的扩展</h2><p><strong>多个信号可以连接同一个槽函数</strong> </p><p>这个就不用实例了，我们的按钮和窗口上的 xx 都可以关闭窗口。 </p><p><strong>信号和槽的参数必须一一对应。</strong> </p><p>信号的发送什么，槽就接收什么，类型必须一致。但信号的参数个数可以多余槽的参数的个 </p><p>数，但前面相同数量的参数类型必须一一对应。反之则不可以</p><h1 id="Lambda-函数"><a href="#Lambda-函数" class="headerlink" title="Lambda 函数"></a>Lambda 函数</h1><p>Lambda 函数也叫 Lambda 表达式，是匿名函数，就是没有名字的函数，和传统的函数不一样。Lambda 表达式是 C++11 中引入的新概念，用于定义并创建匿名的函数对象。首先看 </p><p>下 Lambda 表达式的基本结构。</p><p><code>[捕捉列表] (参数) mutable -&gt;返回值类型 &#123;函数体&#125;</code></p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">[]()&#123;</span><br><span class="line"><span class="built_in">qDebug</span>( <span class="string">&quot;Lambda&quot;</span> );</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>、 [ ]，标识一个，Lambda 匿名函数的开始，这个必须有，不能省略，函数对象参数是传 递给编译器自动生成的函数对象类的构造函数的。函数对象参数只能使用到 Lambda 定 义为止 Lambda 所在的作用域范围内可见的局部变量，包括 Lambda 所在类的 <span class="keyword">this</span>。函 数对象参数有以下形式 </span><br><span class="line">    a) 空，没有使用任何的函数对象参数 </span><br><span class="line">    b) =，函数体内使用 Lambda 所在范围内的可见局部变量包括所在类的 <span class="keyword">this</span> 的传值方 式，相当于编译器给 Lambda 所在地的所有局部变量复制一份给 Lambda 函数 </span><br><span class="line">    c) &amp;，函数体内使用 Lambda 所在范围内的可见局部变量包括所在类的 <span class="keyword">this</span> 的引用方 式，相当于编译器给 Lambda 所在地的所有局部变量引用一份给 Lambda 函数 </span><br><span class="line">    d) <span class="keyword">this</span>，函数体内可以使用 Lambda 所在内的成员变量 </span><br><span class="line">    e) a,不是字母，而是指具体一个变量 a，那么 Lambda 内拷贝一个 a 使用 </span><br><span class="line">    f) &amp;a，Lambda 内引用 a </span><br><span class="line">    g) a,&amp;b,拷贝 a，引用 b </span><br><span class="line">    h) =，&amp;a，&amp;b，除 ab 引用，其余拷贝 </span><br><span class="line">    i) &amp;，a，b。除 ab 拷贝，其余引用 </span><br><span class="line"><span class="number">2</span>、 函数参数，这个跟常规函数一样。 </span><br><span class="line"><span class="number">3</span>、 mutatble，修改关键字，再对应位置 mutatble 关键字，才能修改函数对象参数。否则报 错。可以有，也可以没有，但有才能修改。lambda 默认是 <span class="keyword">const</span>，也就是不能修改本地 变量。 <span class="number">4</span>、 -&gt;<span class="keyword">return</span>-type 返回值的方式，既然是函数就可能有返回值，那么-&gt;就是有返回值的函 数标志。 </span><br><span class="line"><span class="number">5</span>、 函数体，跟常规函数一样。</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">QPushButton * btn2 = <span class="keyword">new</span> <span class="built_in">QPushButton</span>(<span class="string">&quot;222&quot;</span>,<span class="keyword">this</span>); </span><br><span class="line">QPushButton * btn3 = <span class="keyword">new</span> <span class="built_in">QPushButton</span>(<span class="string">&quot;333&quot;</span>,<span class="keyword">this</span>); </span><br><span class="line">btn2-&gt;<span class="built_in">move</span>(<span class="number">0</span>,<span class="number">20</span>); </span><br><span class="line">btn3-&gt;<span class="built_in">move</span>(<span class="number">0</span>,<span class="number">50</span>); </span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>; </span><br><span class="line"><span class="built_in">connect</span>(btn2,&amp;QPushButton::clicked,<span class="keyword">this</span>,[a]()<span class="keyword">mutable</span>&#123; a += <span class="number">100</span>;<span class="built_in">qDebug</span>()&lt;&lt;a; &#125;); </span><br><span class="line"><span class="built_in">connect</span>(btn3,&amp;QPushButton::clicked,<span class="keyword">this</span>,[=]()<span class="keyword">mutable</span>&#123; <span class="built_in">qDebug</span>()&lt;&lt;a; &#125;); <span class="built_in">qDebug</span>()&lt;&lt;a;</span><br></pre></td></tr></table></figure><p>新建两个按钮分别写入以上 Lambda 函数，再连接函数中直接可以写上 Lambda 函数体，消 </p><p>息触发的时候，就直接调用，btn2，中只是将 a 传值，有关键字 mutable 可以在函数中修改 </p><p>a 的值，但不会影响外面的值。</p><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">ret=<span class="number">100</span>;</span><br><span class="line">ret=[&amp;ret]()<span class="keyword">mutable</span>-&gt;<span class="keyword">int</span>&#123;ret*=<span class="number">2</span>;<span class="keyword">return</span> ret;&#125;();</span><br><span class="line">cout&lt;&lt;ret;</span><br><span class="line"><span class="comment">//retx2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>,b=<span class="number">1</span>;</span><br><span class="line">[](<span class="keyword">int</span>&amp; a,<span class="keyword">int</span>&amp; b,<span class="keyword">int</span> count)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;count;i++)&#123;</span><br><span class="line">        ret=a+b;</span><br><span class="line">        a=b;</span><br><span class="line">        b=ret;</span><br><span class="line">        cout&lt;&lt;ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(a,b,<span class="number">20</span>);</span><br><span class="line"><span class="comment">//循环20次输出斐波那契数列(后一项是前俩项的和)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>无参按钮调用有参的槽函数 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术帖 </category>
+          
+          <category> 上位机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> QT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux 网络编程基础</title>
       <link href="/2022/04/01/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
       <url>/2022/04/01/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</url>
@@ -53,9 +82,9 @@
             
             <tag> C++ </tag>
             
-            <tag> 操作系统 </tag>
-            
             <tag> 408 </tag>
+            
+            <tag> 操作系统 </tag>
             
             <tag> 计算机网络基础 </tag>
             
@@ -142,9 +171,9 @@
       
         <tags>
             
-            <tag> 工具 </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> 工具 </tag>
             
         </tags>
       
